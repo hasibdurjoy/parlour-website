@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
+import MiddleBanner from '../MiddleBanner/MiddleBanner';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <Navigation />
             <Banner />
             <Services />
+            <MiddleBanner />
         </div>
     );
 };

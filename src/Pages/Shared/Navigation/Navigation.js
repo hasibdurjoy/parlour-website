@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
-        <Box sx={{ flexGrow: 1, mx: 3 }}>
-            <AppBar position="static" sx={{ backgroundColor: "white", color: "black", boxShadow: "none" }}>
+        <Box sx={{ flexGrow: 1, px: 0 }} >
+            <AppBar position="static" sx={{ backgroundColor: "#fff8f5", color: "black", boxShadow: "none" }}>
                 <Toolbar>
                     <img src="https://i.ibb.co/2qzH431/Group-33092.png" alt="" width="150" />
 

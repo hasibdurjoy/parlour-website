@@ -40,8 +40,8 @@ const Services = () => {
                                 <img src={service.img} alt="" width="70px" style={{ marginTop: "20px" }} />
                                 <Typography variant="h6" >{service.name}</Typography>
                                 <Typography variant="h6" sx={{ my: 2 }}>$ {service.price}</Typography>
-                                <Box sx={{ my: 2, mx: 2, pb: 3 }}>
-                                    <Typography variant="subtitle"  >{service.description}</Typography>
+                                <Box sx={{ mx: 2, pb: 3 }}>
+                                    <Typography variant="subtitle1"  >{service.description}</Typography>
                                 </Box>
                             </Paper>
                         </Grid>
