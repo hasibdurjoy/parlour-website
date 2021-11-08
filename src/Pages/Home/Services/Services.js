@@ -1,34 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Button, Container, Typography } from '@mui/material';
+import { useHistory } from 'react-router';
 
-const services = [
-    {
-        id: 1,
-        name: "Anti Age Face Treatment",
-        price: 199,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/SwBdx6R/Group-1372.png"
-    },
-    {
-        id: 2,
-        name: "Hair Color and Style",
-        price: 99,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/f1D4Cfw/Group-1374.png"
-    },
-    {
-        id: 3,
-        name: "Skin Care Treatment",
-        price: 299,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/pLf3ZrM/Group-1373.png"
-    },
-]
 
 const Services = () => {
+    const [services, setServices] = useState([]);
+    const history = useHistory();
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
+
+    const handleClick = (id) => {
+        history.push(`dashboard/${id}`)
+    }
     return (
         <Container sx={{ mt: 2 }}>
             <h1>Our Awesome <span style={{ color: "#F63E7B" }}>Services</span></h1>
@@ -36,7 +25,7 @@ const Services = () => {
                 {
                     services.map(service => <>
                         <Grid item xs={12} md={4}>
-                            <Paper elevation={3} >
+                            <Paper elevation={3} onClick={() => { handleClick(service._id) }}>
                                 <img src={service.img} alt="" width="70px" style={{ marginTop: "20px" }} />
                                 <Typography variant="h6" >{service.name}</Typography>
                                 <Typography variant="h6" sx={{ my: 2 }}>$ {service.price}</Typography>

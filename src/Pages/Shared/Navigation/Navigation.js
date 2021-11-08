@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <Box sx={{ flexGrow: 1, px: 0 }} >
             <AppBar position="static" sx={{ backgroundColor: "#fff8f5", color: "black", boxShadow: "none" }}>
@@ -34,7 +34,7 @@ const Navigation = () => {
 
                             <Button type="contained" style={{ color: "black", backgroundColor: "white", borderRadius: "20px", padding: "10px 20px" }}>{user.displayName}</Button>
 
-                            <Button type="contained" style={{ color: "white", backgroundColor: "#F63E7B", borderRadius: "20px", padding: "10px 20px" }}>Log out</Button>
+                            <Button onClick={logOut} type="contained" style={{ color: "white", backgroundColor: "#F63E7B", borderRadius: "20px", padding: "10px 20px" }}>Log out</Button>
                         </>
                             :
                             <>

@@ -13,35 +13,35 @@ const Register = () => {
                     <TextField
                         id="outlined-basic"
                         type="text"
-                        name="name"
+                        name="firstName"
                         label="First Name"
                         variant="standard"
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
                     <TextField
                         id="outlined-basic"
                         type="text"
-                        name="name"
+                        name="lastName"
                         label="Last Name"
                         variant="standard"
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
                     <TextField
                         id="outlined-basic"
                         type="email"
-                        name="name"
+                        name="email"
                         label="Email"
                         variant="standard"
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
                     <TextField
                         id="outlined-basic"
                         type="password"
-                        name="name"
+                        name="password"
                         label="Password"
                         variant="standard"
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
                     <TextField
                         id="outlined-basic"
                         type="password"
-                        name="name"
+                        name="confirmPassword"
                         label="Confirm"
                         variant="standard"
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />

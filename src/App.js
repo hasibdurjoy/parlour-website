@@ -10,6 +10,7 @@ import Register from './Pages/Login/Register/Register';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,8 @@ function App() {
             <Route path="/register">
               <Navigation />
               <Register /></Route>
+            <Route exact path="/dashboard"><Dashboard /></Route>
+            <Route path="/dashboard/:serviceId"><Dashboard /></Route>
           </Switch>
         </Router>
       </AuthProvider>

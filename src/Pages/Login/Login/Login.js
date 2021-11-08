@@ -3,9 +3,16 @@ import { Box, fontWeight } from '@mui/system';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { logInWithGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+
+    const signInWithGoogle = () => {
+        logInWithGoogle(location, history);
+    }
     return (
         <Box sx={{ my: 2 }}>
             <Container sx={{ width: "35%", pt: 3, pb: 3 }} style={{ border: "1px solid black" }}>
@@ -42,7 +49,7 @@ const Login = () => {
                 <Typography sx={{ mt: 3 }}>---------------------------------Or Log in using---------------------------------</Typography>
 
                 <Button
-                    onClick={signInUsingGoogle}
+                    onClick={signInWithGoogle}
                     type="contained"
                     style={{ color: "black", backgroundColor: "white", padding: "5px 10px", width: "100%", borderRadius: "20px", border: "1px solid black", display: "flex", justifyContent: "space-around" }}
                     sx={{ mt: 2 }}>
