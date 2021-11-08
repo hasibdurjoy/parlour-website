@@ -26,6 +26,7 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     const registerUser = (email, password, name, history) => {
+        console.log('called');
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -33,7 +34,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
 
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
 
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -59,12 +60,14 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                console.log('logindata');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
             })
             .catch((error) => {
                 setAuthError(error.message);
+                console.log(error.message);
             })
             .finally(() => setIsLoading(false));
     }
@@ -75,7 +78,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setAuthError('');
-                // saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, 'PUT');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
             })
@@ -102,7 +105,7 @@ const useFirebase = () => {
     }, []);
 
     /* useEffect(() => {
-        fetch(`https://still-eyrie-33913.herokuapp.com/users/${user.email}`)
+        fetch(`https://ancient-springs-79733.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
@@ -119,9 +122,9 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    /* const saveUser = (email, displayName, method) => {
+    const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://still-eyrie-33913.herokuapp.com/users', {
+        fetch('https://ancient-springs-79733.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -129,7 +132,7 @@ const useFirebase = () => {
             body: JSON.stringify(user)
         })
             .then()
-    } */
+    }
     return {
         user,
         admin,
