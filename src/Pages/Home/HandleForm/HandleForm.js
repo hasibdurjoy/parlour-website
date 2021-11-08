@@ -7,10 +7,10 @@ import TextareaAutosize from '@mui/material/TextareaAutosize';
 const HandleForm = () => {
     return (
         <Box style={{ backgroundColor: "#fff8f5" }} sx={{ py: 5, px: 5, mt: 5 }}>
-            <Container sx={{ width: "75%" }}>
+            <Container sx={{ width: "50%" }}>
                 <Typography variant="h5" sx={{ mb: 5, fontWeight: 900 }}>Let us handle your <br /> project professionally </Typography>
                 <form>
-                    <Box style={{ display: "flex", justifyContent: "space-around", gap: 50 }} sx={{ my: 4 }}>
+                    <Box style={{ display: "flex", justifyContent: "space-around", gap: 10 }} sx={{ my: 4 }}>
                         <TextField
                             id="outlined-basic"
                             label="Outlined"
@@ -24,7 +24,7 @@ const HandleForm = () => {
                             sx={{ width: "50%", backgroundColor: "white" }} />
                     </Box>
 
-                    <Box style={{ display: "flex", justifyContent: "space-around", gap: 50 }}>
+                    <Box style={{ display: "flex", justifyContent: "space-around", gap: 10 }}>
                         <TextField
                             id="outlined-basic"
                             label="Outlined"

@@ -7,8 +7,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    const { user } = useAuth();
     return (
         <Box sx={{ flexGrow: 1, px: 0 }} >
             <AppBar position="static" sx={{ backgroundColor: "#fff8f5", color: "black", boxShadow: "none" }}>
@@ -27,7 +29,17 @@ const Navigation = () => {
 
                     <NavLink to="/login" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Contact Us</Button></NavLink>
 
-                    <NavLink to="/login" style={{ textDecoration: "none", backgroundColor: "#F63E7B", borderRadius: "20px", padding: "3px 20px" }}><Button type="contained" style={{ color: "white" }}>Login</Button></NavLink>
+                    {
+                        user?.email ? <>
+
+                            <Button type="contained" style={{ color: "black", backgroundColor: "white", borderRadius: "20px", padding: "10px 20px" }}>{user.displayName}</Button>
+
+                            <Button type="contained" style={{ color: "white", backgroundColor: "#F63E7B", borderRadius: "20px", padding: "10px 20px" }}>Log out</Button>
+                        </>
+                            :
+                            <>
+                                <NavLink to="/login" style={{ textDecoration: "none", backgroundColor: "#F63E7B", borderRadius: "20px", padding: "3px 20px" }}><Button type="contained" style={{ color: "white" }}>Login</Button></NavLink></>
+                    }
 
                 </Toolbar>
             </AppBar>

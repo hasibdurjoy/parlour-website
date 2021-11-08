@@ -30,7 +30,7 @@ const services = [
 
 const Services = () => {
     return (
-        <Container sx={{ mt: 5 }}>
+        <Container sx={{ mt: 2 }}>
             <h1>Our Awesome <span style={{ color: "#F63E7B" }}>Services</span></h1>
             <Grid container spacing={5}>
                 {
