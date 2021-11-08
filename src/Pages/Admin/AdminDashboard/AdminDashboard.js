@@ -16,15 +16,16 @@ import {
     useParams,
     useRouteMatch
 } from "react-router-dom";
-import Book from '../Book/Book';
-import BookingList from '../BookingList/BookingList';
-import Review from '../Review/Review';
 import { IconButton } from '@mui/material';
+import OrderList from '../OrderList/OrderList';
+import AddService from '../AddService/AddService';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageServices from '../ManageServices/ManageServices';
 
 
 const drawerWidth = 240;
 
-function Dashboard(props) {
+function AdminDashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
@@ -38,9 +39,10 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <Link to="/home" style={{ marginRight: "20px", textDecoration: "none", }}>Home</Link> <br />
-            <Link to={`${url}/book`} style={{ textDecoration: "none", }}>Book</Link><br />
-            <Link to={`${url}/bookingList`} style={{ textDecoration: "none", }}>Booking List</Link><br />
-            <Link to={`${url}/review`} style={{ textDecoration: "none", }}>Review</Link><br />
+            <Link to={`${url}/orderList`} style={{ textDecoration: "none", }}>Order List</Link><br />
+            <Link to={`${url}/addService`} style={{ textDecoration: "none", }}>Add Service</Link><br />
+            <Link to={`${url}/makeAdmin`} style={{ textDecoration: "none", }}>Make Admin</Link><br />
+            <Link to={`${url}/manageServices`} style={{ textDecoration: "none", }}>Manage Services</Link><br />
         </div>
     );
 
@@ -68,7 +70,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Dashboard
+                        Admin Control
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -110,18 +112,19 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Switch>
-                    <Route exact path={path}><Book /></Route>
-                    <Route path={`${path}/book`}><Book /></Route>
-                    <Route path={`${path}/bookingList`}><BookingList /></Route>
-                    <Route path={`${path}/review`}><Review /></Route>
+                    <Route exact path={path}><OrderList /></Route>
+                    <Route path={`${path}/orderList`}><OrderList /></Route>
+                    <Route path={`${path}/addService`}><AddService /></Route>
+                    <Route path={`${path}/makeAdmin`}><MakeAdmin /></Route>
+                    <Route path={`${path}/manageServices`}><ManageServices /></Route>
                 </Switch>
             </Box>
         </Box>
     );
 }
 
-Dashboard.propTypes = {
+AdminDashboard.propTypes = {
     window: PropTypes.func,
 };
 
-export default Dashboard;
+export default AdminDashboard;
