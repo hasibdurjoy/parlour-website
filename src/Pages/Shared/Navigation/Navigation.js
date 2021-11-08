@@ -29,6 +29,8 @@ const Navigation = () => {
 
                     <NavLink to="/login" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Contact Us</Button></NavLink>
 
+                    <NavLink to="/admin" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Admin</Button></NavLink>
+
                     {
                         user?.email ? <>
 

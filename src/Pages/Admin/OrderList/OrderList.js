@@ -7,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Box } from '@mui/system';
+import DashboardBanner from '../../Shared/DashboardBanner/DashboardBanner';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -35,33 +37,36 @@ const OrderList = () => {
             .then(data => setBookings(data))
     }, [])
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead>
-                    <TableRow>
-                        <StyledTableCell>Name</StyledTableCell>
-                        <StyledTableCell align="left">Service</StyledTableCell>
-                        <StyledTableCell align="left">Email</StyledTableCell>
-                        <StyledTableCell align="left">Pay With</StyledTableCell>
-                        <StyledTableCell align="left">Status</StyledTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
+        <Box>
+            <DashboardBanner name={'Order List'} />
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell>Name</StyledTableCell>
+                            <StyledTableCell align="left">Service</StyledTableCell>
+                            <StyledTableCell align="left">Email</StyledTableCell>
+                            <StyledTableCell align="left">Pay With</StyledTableCell>
+                            <StyledTableCell align="left">Status</StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
 
-                    {bookings.map((row) => (
-                        <StyledTableRow key={row._id}>
-                            <StyledTableCell component="th" scope="row">
-                                {row.displayName}
-                            </StyledTableCell>
-                            <StyledTableCell align="left">{row.email}</StyledTableCell>
-                            <StyledTableCell align="left">{row.serviceName}</StyledTableCell>
-                            <StyledTableCell align="left">{row.payment}</StyledTableCell>
-                            <StyledTableCell align="left">{row.status}</StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                        {bookings.map((row) => (
+                            <StyledTableRow key={row._id}>
+                                <StyledTableCell component="th" scope="row">
+                                    {row.displayName}
+                                </StyledTableCell>
+                                <StyledTableCell align="left">{row.email}</StyledTableCell>
+                                <StyledTableCell align="left">{row.serviceName}</StyledTableCell>
+                                <StyledTableCell align="left">{row.payment}</StyledTableCell>
+                                <StyledTableCell align="left">{row.status}</StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Box>
     );
 };
 

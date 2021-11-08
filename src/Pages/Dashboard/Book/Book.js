@@ -6,6 +6,7 @@ import { Box, fontWeight } from '@mui/system';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import Alert from '@mui/material/Alert';
+import DashboardBanner from '../../Shared/DashboardBanner/DashboardBanner';
 
 const Book = () => {
     const { user } = useAuth();
@@ -47,6 +48,7 @@ const Book = () => {
     }
     return (
         <div>
+            <DashboardBanner name={'Book'} />
             <Container sx={{ width: "50%", pb: 3 }} style={{ marginLeft: 0 }}>
                 <form onSubmit={handleBooking}>
                     <TextField
