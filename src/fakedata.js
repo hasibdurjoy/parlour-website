@@ -1,23 +1,26 @@
-const services = [
+const reviews = [
     {
-        id: 1,
-        name: "Anti Age Face Treatment",
-        price: 199,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/SwBdx6R/Group-1372.png"
+        name: "Nash Patrik",
+        about: "CEO, Manpol",
+        rating: 5,
+        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
+        img: "https://i.ibb.co/VMRfGSL/Ellipse-90.png"
     },
+
     {
-        id: 2,
-        name: "Hair Color and Style",
-        price: 99,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/f1D4Cfw/Group-1374.png"
+        name: "Miriam Barron",
+        about: "CEO, Manpol",
+        rating: 5,
+        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
+        img: "https://i.ibb.co/gmqTPnb/Ellipse-92.png"
     },
+
     {
-        id: 3,
-        name: "Skin Care Treatment",
-        price: 299,
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
-        img: "https://i.ibb.co/pLf3ZrM/Group-1373.png"
+        name: "Bria Malone",
+        about: "CEO, Manpol",
+        rating: 5,
+        review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, iste inventore. Tenetur consequatur exercitationem autem, perspiciatis consectetur repellat consequuntur provident quod modi ut nulla animi earum suscipit, ipsa hic delectus.",
+        img: "https://i.ibb.co/569bd0r/Ellipse-91.png"
     },
+
 ]

@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div style={{ backgroundColor: "#fff8f5" }}>
+        <Box style={{ backgroundColor: "#fff8f5" }} sx={{ py: 3 }}>
             <Container>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6} sx={{ textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -23,7 +23,7 @@ const Banner = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </div>
+        </Box>
     );
 };
 
