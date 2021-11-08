@@ -23,16 +23,16 @@ const BookingList = () => {
                                 <Box>
                                     <Grid container spacing={2}>
                                         <Grid item xs={12} md={4}>
-                                            <img src={service.img} alt="" width="70px" />
+                                            <img src={service.serviceImg} alt="" width="70px" />
                                         </Grid>
                                         <Grid item xs={12} md={8}>
                                             {service.status}
                                         </Grid>
                                     </Grid>
                                 </Box>
-                                <Typography variant="h6" sx={{ my: 2 }}>{service.name}</Typography>
+                                <Typography variant="h6" sx={{ my: 2 }}>{service.serviceName}</Typography>
                                 <Box sx={{ mx: 2, pb: 3 }}>
-                                    <Typography variant="subtitle1"  >{service.description.slice(0, 30)}</Typography>
+                                    <Typography variant="subtitle1"  >{service.serviceDescription.slice(0, 30)}</Typography>
                                 </Box>
                             </Paper>
                         </Grid>

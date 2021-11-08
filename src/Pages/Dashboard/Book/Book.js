@@ -20,11 +20,14 @@ const Book = () => {
     }, []);
 
     const handleBooking = e => {
+        console.log("Clicked");
         const booking = {
             displayName: user.displayName,
             email: user.email,
             status: "pending",
-            ...service
+            serviceName: service.name,
+            serviceImg: service.img,
+            serviceDescription: service.description,
         }
         fetch('https://ancient-springs-79733.herokuapp.com/bookings', {
             method: "POST",
@@ -45,7 +48,7 @@ const Book = () => {
     return (
         <div>
             <Container sx={{ width: "50%", pb: 3 }} style={{ marginLeft: 0 }}>
-                <form >
+                <form onSubmit={handleBooking}>
                     <TextField
                         id="outlined-basic"
                         type="texts"
@@ -101,9 +104,7 @@ const Book = () => {
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <Typography>Your Service Charge will be {service.price}</Typography>
                         <Button
-                            onClick={handleBooking}
                             type="submit"
-                            type="contained"
                             style={{ color: "white", backgroundColor: "#F63E7B", padding: "10px" }} sx={{ my: 2 }}
                         >Pay</Button>
                     </Box>
