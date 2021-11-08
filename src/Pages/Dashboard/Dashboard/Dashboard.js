@@ -45,7 +45,7 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <Link to="/home" style={{ marginRight: "20px", textDecoration: "none", }}>Home</Link> <br />
-            <Link to={`${url}/book/:serviceId`} style={{ textDecoration: "none", }}>Book</Link><br />
+            <Link to={`${url}/book`} style={{ textDecoration: "none", }}>Book</Link><br />
             <Link to={`${url}/bookingList`} style={{ textDecoration: "none", }}>Booking List</Link><br />
         </div>
     );

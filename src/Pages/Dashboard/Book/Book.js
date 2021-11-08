@@ -13,7 +13,7 @@ const Book = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/services/${serviceId}`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setService(data))
     }, []);
     return (
         <div>
@@ -23,7 +23,7 @@ const Book = () => {
                         id="outlined-basic"
                         type="texts"
                         variant="outlined"
-                        defaultValue={user.displayName}
+                        value={user.displayName}
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
 
                     <TextField
@@ -31,7 +31,7 @@ const Book = () => {
                         type="texts"
                         name="name"
                         variant="outlined"
-                        defaultValue={user.email}
+                        value={user.email}
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
 
                     <TextField
@@ -39,7 +39,7 @@ const Book = () => {
                         type="texts"
                         name="name"
                         variant="outlined"
-                        defaultValue={service.name}
+                        value={service.name}
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
 
                     <FormLabel component="legend" style={{ textAlign: "left" }}>Pay With </FormLabel>
