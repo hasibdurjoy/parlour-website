@@ -47,6 +47,7 @@ function Dashboard(props) {
             <Link to="/home" style={{ marginRight: "20px", textDecoration: "none", }}>Home</Link> <br />
             <Link to={`${url}/book`} style={{ textDecoration: "none", }}>Book</Link><br />
             <Link to={`${url}/bookingList`} style={{ textDecoration: "none", }}>Booking List</Link><br />
+            <Link to={`${url}/review`} style={{ textDecoration: "none", }}>Review</Link><br />
         </div>
     );
 
@@ -74,7 +75,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
+                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -119,7 +120,7 @@ function Dashboard(props) {
                     <Route exact path={path}><Book /></Route>
                     <Route path={`${path}/book`}><Book /></Route>
                     <Route path={`${path}/bookingList`}><BookingList /></Route>
-                    <Route path={`${path}/addDoctor`}><Review /></Route>
+                    <Route path={`${path}/review`}><Review /></Route>
                 </Switch>
             </Box>
         </Box>

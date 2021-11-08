@@ -5,16 +5,43 @@ import { Button, Container, FormControlLabel, FormLabel, TextField, Typography }
 import { Box, fontWeight } from '@mui/system';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import Alert from '@mui/material/Alert';
 
 const Book = () => {
     const { user } = useAuth();
     const { serviceId } = useParams();
     const [service, setService] = useState({});
+    const [bookingSuccess, setBookingSuccess] = useState(false);
+
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://ancient-springs-79733.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, []);
+
+    const handleBooking = e => {
+        const booking = {
+            displayName: user.displayName,
+            email: user.email,
+            status: "pending",
+            ...service
+        }
+        fetch('https://ancient-springs-79733.herokuapp.com/bookings', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    setBookingSuccess(true);
+                }
+            });
+
+        e.preventDefault();
+    }
     return (
         <div>
             <Container sx={{ width: "50%", pb: 3 }} style={{ marginLeft: 0 }}>
@@ -74,13 +101,18 @@ const Book = () => {
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <Typography>Your Service Charge will be {service.price}</Typography>
                         <Button
+                            onClick={handleBooking}
+                            type="submit"
                             type="contained"
                             style={{ color: "white", backgroundColor: "#F63E7B", padding: "10px" }} sx={{ my: 2 }}
                         >Pay</Button>
                     </Box>
 
                 </form>
+                {
+                    bookingSuccess && <Alert severity="success">This is a success alert — check it out!</Alert>
 
+                }
             </Container>
 
         </div>
