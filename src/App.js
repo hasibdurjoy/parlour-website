@@ -11,6 +11,7 @@ import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -25,8 +26,8 @@ function App() {
             <Route path="/register">
               <Navigation />
               <Register /></Route>
-            <Route exact path="/dashboard"><Dashboard /></Route>
-            <Route path="/dashboard/:serviceId"><Dashboard /></Route>
+            <PrivateRoute exact path="/dashboard"><Dashboard /></PrivateRoute>
+            <PrivateRoute path="/dashboard/:serviceId"><Dashboard /></PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>
