@@ -92,10 +92,10 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                /* getIdToken(user)
+                getIdToken(user)
                     .then(idToken => {
                         setAuthToken(idToken);
-                    }) */
+                    })
             } else {
                 setUser({});
             }
@@ -104,13 +104,14 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, []);
 
-    /* useEffect(() => {
+    useEffect(() => {
+        console.log(user.email);
         fetch(`https://ancient-springs-79733.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
             })
-    }, [user.email]); */
+    }, [user.email]);
 
     const logOut = () => {
         setIsLoading(true);

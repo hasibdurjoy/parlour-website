@@ -13,6 +13,7 @@ import AuthProvider from './context/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AdminDashboard from './Pages/Admin/AdminDashboard/AdminDashboard';
+import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 function App() {
   return (
     <div className="App">
@@ -29,7 +30,7 @@ function App() {
               <Register /></Route>
             <PrivateRoute exact path="/dashboard"><Dashboard /></PrivateRoute>
             <PrivateRoute path="/dashboard/:serviceId"><Dashboard /></PrivateRoute>
-            <PrivateRoute path="/admin"><AdminDashboard /></PrivateRoute>
+            <AdminRoute path="/admin"><AdminDashboard /></AdminRoute>
           </Switch>
         </Router>
       </AuthProvider>
