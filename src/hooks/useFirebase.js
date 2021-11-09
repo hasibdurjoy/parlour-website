@@ -105,7 +105,6 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        console.log(user.email);
         fetch(`https://ancient-springs-79733.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {

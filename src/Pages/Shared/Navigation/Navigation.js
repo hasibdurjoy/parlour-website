@@ -23,7 +23,7 @@ const Navigation = () => {
 
                     <NavLink to="/home" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Home</Button></NavLink>
 
-                    <NavLink to="/login" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Our Portfolio</Button></NavLink>
+                    <NavLink to="/services" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Services</Button></NavLink>
 
                     <NavLink to="/login" style={{ textDecoration: "none" }}><Button style={{ color: "black" }} type="contained">Our Team</Button></NavLink>
 

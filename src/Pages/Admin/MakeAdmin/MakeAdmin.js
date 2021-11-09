@@ -68,7 +68,7 @@ const MakeAdmin = () => {
         fetch('https://ancient-springs-79733.herokuapp.com/users/?role=admin')
             .then(res => res.json())
             .then(data => setAdmins(data))
-    }, [])
+    }, [success])
     return (
         <div>
             <DashboardBanner name={"Make Admin"} />

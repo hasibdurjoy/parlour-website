@@ -14,6 +14,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import AdminDashboard from './Pages/Admin/AdminDashboard/AdminDashboard';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import Services from './Pages/Home/Services/Services';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route path="/home"><Home /></Route>
+            <Route path="/services"><Navigation /><Services /></Route>
             <Route path="/login">
               <Navigation />
               <Login /></Route>
