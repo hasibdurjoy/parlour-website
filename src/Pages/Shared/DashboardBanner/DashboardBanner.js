@@ -20,7 +20,7 @@ import { IconButton } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 function DashboardBanner(props) {
     const { user } = useAuth();

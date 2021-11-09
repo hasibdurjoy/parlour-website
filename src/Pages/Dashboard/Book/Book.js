@@ -12,6 +12,7 @@ const Book = () => {
     const { user } = useAuth();
     const { serviceId } = useParams();
     const [service, setService] = useState({});
+    const [payment, setPayment] = useState({});
     const [bookingSuccess, setBookingSuccess] = useState(false);
 
     useEffect(() => {
@@ -20,8 +21,11 @@ const Book = () => {
             .then(data => setService(data))
     }, []);
 
+    const checking = (e) => {
+        setPayment(e.target.value);
+    }
+
     const handleBooking = e => {
-        console.log("Clicked");
         const booking = {
             displayName: user.displayName,
             email: user.email,
@@ -29,6 +33,7 @@ const Book = () => {
             serviceName: service.name,
             serviceImg: service.img,
             serviceDescription: service.description,
+            payment: payment
         }
         fetch('https://ancient-springs-79733.herokuapp.com/bookings', {
             method: "POST",
@@ -75,7 +80,7 @@ const Book = () => {
                         sx={{ width: "100%", backgroundColor: "white", mb: 1 }} />
 
                     <FormLabel component="legend" style={{ textAlign: "left" }}>Pay With </FormLabel>
-                    <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                    <RadioGroup onClick={checking} row aria-label="payment" aria-required defaultChecked="creditCard" name="row-radio-buttons-group">
                         <FormControlLabel value="creditCart" control={<Radio />} label="Credit Card" />
                         <FormControlLabel value="Paypal" control={<Radio />} label="Paypal" />
                     </RadioGroup>

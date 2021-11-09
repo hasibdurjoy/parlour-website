@@ -22,7 +22,7 @@ import Review from '../Review/Review';
 import { IconButton } from '@mui/material';
 
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 function Dashboard(props) {
     const { window } = props;

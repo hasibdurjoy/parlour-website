@@ -23,7 +23,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageServices from '../ManageServices/ManageServices';
 
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 function AdminDashboard(props) {
     const { window } = props;

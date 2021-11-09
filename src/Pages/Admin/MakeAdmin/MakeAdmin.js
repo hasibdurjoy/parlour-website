@@ -74,6 +74,7 @@ const MakeAdmin = () => {
             <DashboardBanner name={"Make Admin"} />
             <form onSubmit={handleAdminSubmit}>
                 <TextField
+                    required
                     sx={{ width: '50%' }}
                     type="email"
                     id="standard-basic"
