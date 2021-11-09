@@ -118,7 +118,7 @@ const Book = () => {
 
                 </form>
                 {
-                    bookingSuccess && <Alert severity="success">This is a success alert — check it out!</Alert>
+                    bookingSuccess && <Alert severity="success">Successfully Booked</Alert>
 
                 }
             </Container>

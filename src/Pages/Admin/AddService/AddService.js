@@ -12,8 +12,8 @@ const AddService = () => {
     const { user } = useAuth();
     const { serviceId } = useParams();
     const [service, setService] = useState({});
-    const [loginData, setLoginData] = useState({});
-    const [bookingSuccess, setBookingSuccess] = useState(false);
+    const [serviceData, setServiceData] = useState({});
+    const [addSuccess, setAddSuccess] = useState(false);
 
     useEffect(() => {
         fetch(`https://ancient-springs-79733.herokuapp.com/services/${serviceId}`)
@@ -24,24 +24,24 @@ const AddService = () => {
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
+        const newServiceData = { ...serviceData };
+        newServiceData[field] = value;
+        setServiceData(newServiceData);
     }
 
     const handleBooking = e => {
-        console.log(loginData);
+        console.log(serviceData);
         fetch('https://ancient-springs-79733.herokuapp.com/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(loginData)
+            body: JSON.stringify(serviceData)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    setBookingSuccess(true);
+                    setAddSuccess(true);
                 }
             });
 
@@ -101,7 +101,7 @@ const AddService = () => {
 
                 </form>
                 {
-                    bookingSuccess && <Alert severity="success">This is a success alert — check it out!</Alert>
+                    addSuccess && <Alert severity="success">Successfully added service</Alert>
 
                 }
             </Container>

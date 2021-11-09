@@ -20,23 +20,23 @@ const BookingList = () => {
             <Container sx={{ mt: 5, mb: 4 }}>
                 <Grid container spacing={5}>
                     {
-                        bookings.map(service => <>
+                        bookings.map(booking => <>
                             <Grid item xs={12} md={4}>
                                 <Paper elevation={3} >
                                     <Box>
                                         <Grid container spacing={2}>
                                             <Grid item xs={12} md={4}>
-                                                <img src={service.serviceImg} alt="" width="70px" />
+                                                <img src={booking.serviceImg} alt="" width="70px" />
                                             </Grid>
                                             <Grid item xs={12} md={8}>
-                                                {service.status}
+                                                {booking.status}
                                             </Grid>
                                         </Grid>
                                     </Box>
-                                    <Typography variant="h6" sx={{ my: 2 }}>{service.serviceName}</Typography>
+                                    <Typography variant="h6" sx={{ my: 2 }}>{booking.serviceName}</Typography>
                                     <Box sx={{ mx: 2, pb: 3 }}>
                                         <Typography variant="subtitle1"  >
-                                            {service.serviceDescription}</Typography>
+                                            {booking.serviceDescription}</Typography>
                                     </Box>
                                 </Paper>
                             </Grid>

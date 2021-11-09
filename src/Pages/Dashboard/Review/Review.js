@@ -6,22 +6,21 @@ import DashboardBanner from '../../Shared/DashboardBanner/DashboardBanner';
 
 const Review = () => {
     const { user } = useAuth();
-    const [loginData, setLoginData] = useState({});
-    const [bookingSuccess, setBookingSuccess] = useState(false);
+    const [review, setReview] = useState({});
+    const [reviewSuccess, setReviewSuccess] = useState(false);
 
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
+        const newReviewData = { ...review };
+        newReviewData[field] = value;
+        setReview(newReviewData);
     }
 
     const handleBooking = e => {
-        console.log(loginData);
         const reviewData = {
             name: user.displayName,
-            ...loginData,
+            ...review,
             img: user.photoURL
         }
         fetch('https://ancient-springs-79733.herokuapp.com/reviews', {
@@ -34,7 +33,7 @@ const Review = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    setBookingSuccess(true);
+                    setReviewSuccess(true);
                 }
             });
 
@@ -93,7 +92,7 @@ const Review = () => {
 
                 </form>
                 {
-                    bookingSuccess && <Alert severity="success">This is a success alert — check it out!</Alert>
+                    reviewSuccess && <Alert severity="success">Successfully added your review</Alert>
 
                 }
             </Container>
