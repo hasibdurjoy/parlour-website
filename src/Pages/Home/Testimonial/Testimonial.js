@@ -36,7 +36,7 @@ const Testimonial = () => {
                                 <Typography variant="subtitle1" sx={{ my: 2 }}>{service.review}</Typography>
                                 <Box sx={{ mx: 2, pb: 3 }}>
                                     <StarRatings
-                                        rating={service.rating}
+                                        rating={parseInt(service.rating)}
                                         starDimension="30px"
                                         starSpacing="10px"
                                         color="orange"
